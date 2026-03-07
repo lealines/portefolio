@@ -11,7 +11,7 @@
         :root {
             --bg-dark: #121212;
             --bg-card: #1E1E1E;
-            --primary: #FFD43B; /* Amarelo Python */
+            --primary: #FFD43B;
             --text-light: #F8F9FA;
             --text-muted: #ADB5BD;
             --text-dark: #121212;
@@ -31,7 +31,7 @@
             overflow-x: hidden;
         }
 
-        /* Navegação */
+       
         header {
             display: flex;
             justify-content: space-between;
@@ -41,7 +41,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            height: 90px; /* Altura fixa para ajudar no cálculo do ecrã */
+            height: 90px;
         }
 
         .logo { font-size: 1.5rem; font-weight: 700; }
@@ -70,21 +70,21 @@
         }
         .btn-hire:hover { background-color: #e6be35; transform: scale(1.05); }
 
-        /* Secção Hero com Efeito Manta (Sticky) */
+        
         .hero {
             position: sticky;
-            top: 90px; /* Começa logo abaixo do header */
+            top: 90px;
             z-index: 1;
             background-color: var(--bg-dark); 
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 10%;
-            height: calc(100vh - 90px); /* Garante que ocupa exatamante o resto do ecrã visível */
+            height: calc(100vh - 90px);
             gap: 40px;
         }
 
-        .hero-text { flex: 1; margin-top: -50px; /* Sobe um bocadinho o texto para centrar melhor */ }
+        .hero-text { flex: 1; margin-top: -50px; }
 
         .hero-text h1 {
             font-size: 3.5rem;
@@ -101,7 +101,7 @@
             font-weight: 300;
         }
 
-        /* Ícones Divertidos das Tecnologias */
+        
         .tech-cluster {
             display: flex;
             gap: 20px;
@@ -121,7 +121,7 @@
             transform: translateY(-12px) rotate(15deg) scale(1.2);
         }
 
-        /* Ícones Redes Sociais */
+        
         .social-links { display: flex; gap: 15px; }
         .social-links a {
             display: flex; align-items: center; justify-content: center;
@@ -135,7 +135,7 @@
             transform: translateY(-5px) scale(1.1);
         }
 
-        /* Foto da Inês */
+        
         .hero-img { flex: 1; display: flex; justify-content: flex-end; margin-top: -50px; }
         .hero-img img {
             width: 350px; height: 350px; object-fit: cover;
@@ -145,10 +145,10 @@
         }
         .hero-img img:hover { transform: scale(1.03) rotate(-2deg); }
 
-        /* Indicador de Scroll Dinâmico Corrigido */
+        
         .scroll-indicator {
             position: absolute;
-            bottom: 30px; /* Agora vai ficar sempre visível acima do fundo do ecrã */
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -171,7 +171,7 @@
             60% { transform: translateY(-7px) translateX(-50%); }
         }
 
-        /* O DIVISOR E A CONTINUAÇÃO DA MANTA */
+        
         .projects-section { 
             position: relative;
             z-index: 2; 
@@ -230,7 +230,7 @@
         
         .btn-project:hover { background-color: var(--primary); color: var(--text-dark); }
 
-        /* Contact Section */
+        
         .contact-section { 
             position: relative;
             z-index: 3;
@@ -251,7 +251,7 @@
             flex-wrap: wrap;
         }
 
-        /* Footer */
+        
         footer {
             position: relative;
             z-index: 3;
@@ -268,13 +268,52 @@
         }
 
         @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; text-align: center; justify-content: center; height: auto; min-height: calc(100vh - 90px); padding-top: 40px; padding-bottom: 100px;}
-            .hero-text { margin-top: 0; }
-            .hero-img { justify-content: center; margin-bottom: 30px; margin-top: 0; }
-            .social-links { justify-content: center; }
-            .tech-cluster { justify-content: center; }
-            .projects-section { padding-top: 60px; }
-            .scroll-indicator { bottom: 20px; }
+            header {
+                padding: 10px 5%;
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .nav-links {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                height: auto;
+                min-height: 100vh;
+                padding: 40px 5%;
+                position: relative;
+                top: 0;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-img img {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 20px;
+            }
+
+            .social-links, .tech-cluster {
+                justify-content: center;
+            }
+
+            .projects-section {
+                padding: 60px 5%;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
         }
     </style>
 </head>
